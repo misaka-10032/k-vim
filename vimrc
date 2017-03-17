@@ -99,7 +99,7 @@ set cursorline
 " 好处：误删什么的，如果以前屏幕打开，可以找回
 " set t_ti= t_te=
 " I would prefer to swiping it out
-set rs  
+set rs
 
 " 鼠标暂不启用, 键盘党....
 set mouse-=a
@@ -213,7 +213,8 @@ set softtabstop=4
 " insert tabs on the start of a line according to shiftwidth, not tabstop 按退格键时可以一次删掉 4 个空格
 set smarttab
 " 将Tab自动转化成空格[需要输入真正的Tab键时，使用 Ctrl+V + Tab]
-set expandtab
+"misaka: I still want stab by default; will et for specific filetypes.
+"set expandtab
 " 缩进时，取整 use multiple of shiftwidth when indenting with '<' and '>'
 set shiftround
 
@@ -566,6 +567,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " 具体编辑文件类型的一般设置，比如不要 tab 等
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
+autocmd FileType c,cpp,java set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 autocmd FileType ruby,javascript,html,css,xml set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown.mkd
 autocmd BufRead,BufNewFile *.part set filetype=html
